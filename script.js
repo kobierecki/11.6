@@ -26,7 +26,8 @@ $(function(){
             });
 
             $columnAddCard.click(function(){
-                self.addCard(new Card(prompt('Enter the name of the card')));
+                self.addCard(
+                    new Card( prompt('Enter the name of the card')));
             });
 
             $column.append($columnTitle);
@@ -48,26 +49,32 @@ $(function(){
     }
 
     function Card(description) {
-        var self = this;
+        console.log(description);
+        if (description === "" || description === null){
+            alert("Give a name")
+            return;
+        } else {
+            var self = this;
 
-        this.id = randomString();
-        this.description = description;
-        this.$element = createCard();
-
-        function createCard() {
-            var $card = $('<li>').addClass('card');
-            var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-            var $cardDelete = $('<button>').addClass('btn-delete').text('x');
-
-            $cardDelete.click(function(){
-                self.removeCard();
-            });
-
-            $card.append($cardDelete);
-            $card.append($cardDescription);
-
-            return $card;
-        };
+            this.id = randomString();
+            this.description = description;
+            this.$element = createCard();
+    
+            function createCard() {
+                var $card = $('<li>').addClass('card');
+                var $cardDescription = $('<p>').addClass('card-description').text(self.description);
+                var $cardDelete = $('<button>').addClass('btn-delete-card').text('x');
+    
+                $cardDelete.click(function(){
+                    self.removeCard();
+                });
+    
+                $card.append($cardDelete);
+                $card.append($cardDescription);
+    
+                return $card;
+            };
+        } 
     };
 
     Card.prototype = {
@@ -94,8 +101,13 @@ $(function(){
  
     $('.create-column').click(function(){
         var name = prompt('Enter a column name');
-        var column = new Column(name);
-        board.addColumn(column);
+        if (name === "" || name === null){
+            alert("Give a name");
+            return;
+        } else {
+            var column = new Column(name);
+            board.addColumn(column);
+        } 
     });
 
     var toDoColumn = new Column('To do');

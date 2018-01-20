@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
+
+body {
+  background: url(https://images.pexels.com/photos/403575/pexels-photo-403575.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
+  background-size: cover; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+  background-color: #ffc042; }
+  .nav .create-column {
+    height: 40px;
+    padding: 5px 10px;
+    border: 2px solid #27ae60;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: #fff;
+    font-size: 16px; }
+
+.column-container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center; }
+  .column-container .column {
+    position: relative;
+    align-self: flex-start;
+    width: 30%;
+    margin: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5); }
+    .column-container .column .column-title {
+      padding: 10px;
+      background-color: #95a5a6; }
+    .column-container .column .add-card {
+      z-index: 1;
+      position: absolute;
+      bottom: 0px;
+      right: 5%;
+      height: 40px;
+      width: 40px;
+      border: 5px solid #27ae60;
+      border-radius: 20px;
+      background-color: #27ae60;
+      font-size: 25px;
+      font-weight: 700;
+      color: #fff; }
+    .column-container .column .btn-delete {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffc042;
+      font-weight: 900;
+      font-size: 20px; }
+  .column-container .column ul {
+    padding: 10px;
+    list-style-type: none;
+    min-height: 30px; }
+    .column-container .column ul .card {
+      display: block;
+      cursor: pointer;
+      padding: 10px;
+      position: relative; }
+      .column-container .column ul .card .card-description {
+        display: inline-block;
+        margin-left: 25px;
+        font-weight: 700; }
+      .column-container .column ul .card .btn-delete-card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ffc042;
+        font-weight: 900;
+        font-size: 16px; }
+
+/*# sourceMappingURL=style.css.map */
