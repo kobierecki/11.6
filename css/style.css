@@ -23,6 +23,10 @@ body {
     color: #fff;
     font-size: 16px;
     cursor: pointer; }
+    @media (max-width: 500px) {
+      .nav .create-column {
+        height: 60px;
+        font-size: 14px; } }
 
 .column-container {
   display: flex;
@@ -39,6 +43,12 @@ body {
     padding-bottom: 30px;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px; }
+    @media (max-width: 900px) {
+      .column-container .column {
+        width: 40%; } }
+    @media (max-width: 500px) {
+      .column-container .column {
+        width: 100%; } }
     .column-container .column .column-title {
       padding: 10px;
       background-color: #95a5a6;
